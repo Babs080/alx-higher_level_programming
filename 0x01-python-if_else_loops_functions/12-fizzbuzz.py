@@ -4,7 +4,7 @@ BUZZ = "Buzz"
 
 
 def fizzbuzz():
-    for number in range(1, 101):
+    for number in range(1, 100):
         if (number % 3 and number % 5):
             print("%s%s" % (FIZZ, BUZZ), end=' ')
         elif (number % 3):
