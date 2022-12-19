@@ -1,13 +1,12 @@
 #!/usr/bin/python3
+
+
 def safe_print_division(a, b):
-    quotient = None
+    """Returns the division of a by b."""
     try:
-        quotient = a / b
-    except:
-        pass
+        div = a / b
+    except (TypeError, ZeroDivisionError):
+        div = None
     finally:
-        if quotient is not None:
-            print("Inside result: {:.1f}".format(quotient))
-        else:
-            print("Inside result: None")
-    return quotient
+        print("Inside result: {}".format(div))
+    return (div)
