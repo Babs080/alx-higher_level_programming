@@ -14,4 +14,4 @@ File | Description
 6-raise_exception_msg.py | A function that raises a name exception with a message
 
 ## Author
-Francesca Cantor
+Abdullahi Musa
