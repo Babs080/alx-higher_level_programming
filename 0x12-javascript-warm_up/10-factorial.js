@@ -1,12 +1,13 @@
 #!/usr/bin/node
-// Script that computes and prints a factorial
 
-let factorial = function (num) {
-  if (isNaN(Number(num))) {
+function factorial (number) {
+  if (isNaN(parseInt(number))) {
     return (1);
   }
-  return num ? num * factorial(num - 1) : 1;
-};
+  if (number === 1) {
+    return (1);
+  }
+  return (number * factorial(number - 1));
+}
 
-let result = factorial(process.argv[2]);
-console.log(result);
+console.log(factorial(parseInt(process.argv[2])));

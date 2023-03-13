@@ -1,17 +1,20 @@
 #!/usr/bin/node
-// Script that searches the second biggest integer in the list of arguments
 
-let list = [];
-if (process.argv.length < 4) {
-  console.log(0);
-} else {
-  for (let i = 2; i < process.argv.length; i++) {
-    if (Number(process.argv[i])) {
-      list.push(Number(process.argv[i]));
+function second (myArray) {
+  if (myArray.length === 2 || myArray.length === 3) { return (0); }
+
+  let max = myArray[2];
+  let secondMax = myArray[3];
+
+  for (let i = 2; i < myArray.length; i++) {
+    if (myArray[i] > max) {
+      secondMax = max;
+      max = myArray[i];
+    } else if (myArray[i] > secondMax && myArray[i] < max) {
+      secondMax = myArray[i];
     }
   }
-  // removes duplicate
-  let sorted = list.sort(function (a, b) { return a - b; }).reverse();
-  let uniq = [...new Set(sorted)];
-  console.log(uniq[1]);
+  return (secondMax);
 }
+
+console.log(second(process.argv));
