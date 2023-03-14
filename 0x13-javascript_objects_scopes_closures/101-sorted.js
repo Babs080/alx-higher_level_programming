@@ -1,11 +1,13 @@
 #!/usr/bin/node
-// JS Script
-let dict = require('./101-data').dict;
-let n = {};
-for (let i in dict) {
-  if (n[dict[i]] === undefined) {
-    n[dict[i]] = [];
-  }
-  n[dict[i]].push(i);
+// Script imports a dictionary of occurrences by user id
+// and computes a dictionary of user ids by occurrence.
+
+const { dict } = require('./101-data.js');
+const Dictn = {};
+for (const N in dict) {
+    if (Dictn[dict[N]] === undefined) {
+	Dictn[dict[N]] = [];
+    }
+    Dictn[dict[N]].push(N);
 }
-console.log(n);
+console.log(Dictn);
