@@ -1,5 +1,5 @@
 #!/usr/bin/node
-// Adds onto 3-rectangle
+// JS Script
 module.exports = class Rectangle {
   constructor (w, h) {
     if (w > 0 && h > 0) {
@@ -7,18 +7,19 @@ module.exports = class Rectangle {
       this.height = h;
     }
   }
+
   print () {
     for (let i = 0; i < this.height; i++) {
       console.log('X'.repeat(this.width));
     }
   }
+
   rotate () {
-    let x = this.width;
-    this.width = this.height;
-    this.height = x;
+    this.width = [this.height, this.height = this.width][0];
   }
+
   double () {
-    this.width = this.width * 2;
-    this.height = this.height * 2;
+    this.width *= 2;
+    this.height *= 2;
   }
 };
